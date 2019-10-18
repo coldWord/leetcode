@@ -21,42 +21,27 @@
  * };
  */
 /**
- * 设h1为l1长度，h2为l2长度
- * 时间复杂度: O(max{h1,h2})
- * 空间复杂度: O(max{h1,h2}+1)
+ * 设h1为l1长度，h2为l2长度,使用原来的链表的元素，不用新new了
+ * 时间复杂度: O(h1+h2)
+ * 空间复杂度: O(1)
  */
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        ListNode *pl1 = l1, *pl2 = l2;
-        // ListNode *head = new ListNode(0); 内存泄漏
-        // ListNode *pl3 = head;
-        ListNode head = ListNode(0);
-        ListNode *pl3 = &head;
-        while (pl1 && pl2) {
-            if (pl1->val <= pl2->val) {
-                pl3->next = new ListNode(pl1->val);
-                pl1 = pl1->next;
+        ListNode dummy(-1); 
+        ListNode *tail = &dummy;
+        while (l1 && l2) {
+            if (l1->val <= l2->val) {
+                tail->next = l1;
+                l1 = l1->next;
             } else {
-                pl3->next = new ListNode(pl2->val);
-                pl2 = pl2->next;
+                tail->next = l2;
+                l2 = l2->next;
             }
-            pl3 = pl3->next;
+            tail = tail->next;
         }
-        if (!pl1) {
-            while (pl2) {
-                pl3->next = new ListNode(pl2->val);
-                pl2 = pl2->next;
-                pl3 = pl3->next;
-            }
-        } else {
-            while (pl1) {
-                pl3->next = new ListNode(pl1->val);
-                pl1 = pl1->next;
-                pl3 = pl3->next;
-            }
-        }
-        return head.next;
+        tail->next = l1 ? l1 : l2;
+        return dummy.next;
     }
 };
 ```
