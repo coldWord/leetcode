@@ -6,7 +6,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 
 ? : 中途有停顿，且思路也不怎么清晰的
 
-×: 看了答案才做出来的，或做之前看过答案
+*: 看了答案才做出来的，或做之前看过答案
 
 /- : 没做出来
 
@@ -18,31 +18,31 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 86.分隔链表                | LinkList | medium |
 | y 92.反转链表 II             | LinkList | medium |
 | y 25.K个一组翻转链表         | LinkList | hard   |
-|                              |          |        |
-|                              |          |        |
-|                              |          |        |
+| y 202.快乐数                 | Hash     | easy   |
+| y 217.存在重复元素           | Hash     | easy   |
+| y 219.存在重复元素II         | Hash     | easy   |
 
-| Status                          | Tag      | Note   |
-| ------------------------------- | -------- | ------ |
-| ？ 83. 删除排序链表中的重复元素 | LinkList | easy   |
-| ×  148.排序链表                 | LinkList | medium |
-| ?  203.删除链表中给定的元素     | LinkList | easy   |
-| @ 82.删除排序链表中重复元素II   | LinkList | medium |
-| @ 138.复制带随机指针的链表      | LinkList | medium |
-| ？ 143.重排链表                 | LinkList | medium |
-| @ 147.对链表进行插入排序        | LinkList | medium |
-| ?  328.奇偶链表                 | LinkList | medium |
-| - 430.扁平化多级双向链表        | LinkList | medium |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
-|                                 |          |        |
+| Status                          | Tag                     | Note   |
+| ------------------------------- | ----------------------- | ------ |
+| ？ 83. 删除排序链表中的重复元素 | LinkList                | easy   |
+| *  148.排序链表                 | LinkList                | medium |
+| ?  203.删除链表中给定的元素     | LinkList                | easy   |
+| @ 82.删除排序链表中重复元素II   | LinkList                | medium |
+| @ 138.复制带随机指针的链表      | LinkList                | medium |
+| ？ 143.重排链表                 | LinkList                | medium |
+| @ 147.对链表进行插入排序        | LinkList                | medium |
+| ?  328.奇偶链表                 | LinkList                | medium |
+| - 430.扁平化多级双向链表        | LinkList                | medium |
+| @ 136.只出现一次的数字          | Hash / Bit Manipulation | easy   |
+| * 204.计数质数                  | Math                    | easy   |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
+|                                 |                         |        |
 
 ## 链表注意事项
 
