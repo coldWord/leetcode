@@ -27,6 +27,36 @@
      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 ```
 
+## Idea (Optimized)
+
+使用sliding window.
+
+## Solution
+
+```java
+// time complexity: O(2n)
+// space complexity: O(n)
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int maxLength = 0, i = 0, j = 0;
+        Set<Character> set = new HashSet<Character>();
+        while (j < s.length()) {
+            if (!set.contains(s.charAt(j))) {
+                set.add(s.charAt(j));
+                ++j;
+                maxLength = Math.max(maxLength, set.size());
+            } else {
+                set.remove(s.charAt(i));
+                ++i;
+            }
+        }
+        return maxLength;
+    }
+}
+```
+
+
+
 ## Idea
 
 用哈希集存储子串，然后从头开始以每个字符为起始遍历字符串
