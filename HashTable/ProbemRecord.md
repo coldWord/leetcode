@@ -16,7 +16,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 217.存在重复元素   | Hash | easy   |
 | y 219.存在重复元素II | Hash | easy   |
 | y 36.有效的数独      | Hash | medium |
-|                      |      |        |
+| y 187.重复的DNA序列  | Hash | medium |
 |                      |      |        |
 |                      |      |        |
 |                      |      |        |
