@@ -16,11 +16,10 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 217.存在重复元素               | Hash | easy   |
 | y 219.存在重复元素II             | Hash | easy   |
 | y 36.有效的数独                  | Hash | medium |
+| y 187.重复的DNA序列              | Hash | medium |
 | y 428.找到字符串中所有字母异位词 | Hash | medium |
 |                                  |      |        |
 |                                  |      |        |
-|                                  |      |        |
-
 | Status                     | Tag                     | Note   |
 | -------------------------- | ----------------------- | ------ |
 | @ 136.只出现一次的数字     | Hash / Bit Manipulation | easy   |
