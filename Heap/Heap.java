@@ -1,22 +1,3 @@
-## Heap
-堆（Heap）是一个可以被看成近似完全二叉树的数组。树上的每一个结点对应数组的一个元素。除了最底层外，该树是完全充满的，而且是从左到右填充。—— 来自：《算法导论》
-
-堆包括最大堆和最小堆：最大堆的每一个节点（除了根结点）的值不大于其父节点；最小堆的每一个节点（除了根结点）的值不小于其父节点。
-
-堆常见的操作：
-
-- HEAPIFY 建堆：把一个乱序的数组变成堆结构的数组，时间复杂度为 O(n)。
-- HEAPPUSH：把一个数值放进已经是堆结构的数组中，并保持堆结构，时间复杂度为 O(log n)。
-- HEAPPOP：从最大堆中取出最大值或从最小堆中取出最小值，并将剩余的数组保持堆结构，时间复杂度为 O(log n)。
-- HEAPSORT：借由 HEAPFY 建堆和 HEAPPOP 堆数组进行排序，时间复杂度为 O(n log n)，空间复杂度为 O(1)。
-
-应用：
-- 堆排序
-- 优先队列
-- 找出第k大元素
-
-## Implementation
-```java
 public class Heap {
     private int maxSize;
     private int size;
@@ -26,6 +7,10 @@ public class Heap {
         maxSize = 128;
         size = 0;
         heap = new int[maxSize];    
+    }
+
+    public int size() {
+        return size;
     }
 
     private int parent(int pos) {
@@ -40,6 +25,12 @@ public class Heap {
         return 2 * pos + 2;
     }
 
+    private void swap(int pos1, int pos2) {
+        int tmp = heap[pos1];
+        heap[pos1] = heap[pos2];
+        heap[pos2] = tmp;
+    }
+
     // 将元素插入至最后，然后向上调整
     public void heapPush(int num) {
         if (size < maxSize)
@@ -47,9 +38,7 @@ public class Heap {
         heap[size-1] = num;
         int current = size-1;
         while (heap[current] < heap[parent(current)]) {
-            int tmp = heap[current];
-            heap[current] = heap[parent(current)];
-            heap[parent(current)] = tmp;
+            swap(current, parent(current));
             current = parent(current);
         }
     }
@@ -72,13 +61,33 @@ public class Heap {
                 smaller = right(current); 
             if (heap[current] < heap[smaller])
                 break;
-            int tmp = heap[smaller];
-            heap[smaller] = heap[current];
-            heap[current] = tmp;
+            swap(current, smaller);
             current = smaller;
         }
 
         return min;
+    }
+
+    public int remove(int pos) {
+        int res = heap[pos];
+        int cur = pos;
+        do {
+            // cur是叶节点
+            if (left(cur) > size) {
+                int oldSize = size-1;
+                size = cur;
+                while (size < oldSize) {
+                    heapPush(heap[++cur]);
+                }
+                break;
+            }
+            int smaller = left(cur);
+            if (right(cur) < size && heap[right(cur)] < heap[smaller])
+                smaller = right(cur);
+            heap[cur] = heap[smaller];
+            cur = smaller;
+        } while(true);
+        return res;
     }
 
     public void output() {
@@ -86,5 +95,16 @@ public class Heap {
             System.out.println(heap[i]);
         }
     }
+
+    public static void main(String[] args) {
+        Heap h = new Heap();
+        for (int i = 10; i > 0; --i) {
+            h.heapPush(i);
+        }
+        h.output();
+        int val = h.remove(7);
+        System.out.println("after remove : " + val);
+        System.out.println(h.size());
+        h.output();
+    }
 }
-```
