@@ -12,7 +12,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
-|        |      |      |
+| y 100. Same Tree | Tree | Easy |
 |        |      |      |
 |        |      |      |
 |        |      |      |

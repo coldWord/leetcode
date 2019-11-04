@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.ir.TryNode;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -25,11 +27,30 @@ public class Tree {
         this.root = root;
     }
 
+    // 前序遍历
     public void preOrder(TreeNode node) {
         if (node != null) {
-            System.out.println(node.val);
+            System.out.print(node.val + " ");
             preOrder(node.left);
             preOrder(node.right);
+        }
+    }
+
+    // 中序遍历
+    public void inOrder(TreeNode node) {
+        if (node != null) {
+            inOrder(node.left);
+            System.out.print(node.val + " ");
+            inOrder(node.right);
+        }
+    }
+
+    // 后序遍历
+    public void postOrder(TreeNode node) {
+        if (node != null) {
+            postOrder(node.left);
+            postOrder(node.right);
+            System.out.print(node.val + " ");
         }
     }
 
@@ -49,5 +70,10 @@ public class Tree {
 
         Tree t = new Tree(node1);
         t.preOrder(node1);
+        System.out.println();
+        t.inOrder(node1);
+        System.out.println();
+        t.postOrder(node1);
+        System.out.println();
     }
 }
