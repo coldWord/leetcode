@@ -1,4 +1,5 @@
-import jdk.nashorn.internal.ir.TryNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Definition for a binary tree node.
@@ -54,6 +55,25 @@ public class Tree {
         }
     }
 
+    public int levelOrder(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        if (root == null) return 0; 
+        q.offer(root);
+        int level = 0;
+        while (!q.isEmpty()) {
+            int levelSize = q.size();
+            for (int i = 0; i < levelSize; ++i) {
+                TreeNode node = q.poll();
+                if (node.left != null) q.offer(node.left);
+                if (node.right != null) q.offer(node.right);
+                System.out.print(node.val + " ");
+            }
+            level++;
+            System.out.println();
+        }
+        return level;
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
@@ -75,5 +95,7 @@ public class Tree {
         System.out.println();
         t.postOrder(node1);
         System.out.println();
+
+        System.out.println("level = " + t.levelOrder(node1));
     }
 }
