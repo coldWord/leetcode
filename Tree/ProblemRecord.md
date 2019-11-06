@@ -15,9 +15,9 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 100. Same Tree | Tree | Easy |
 | y 107. Binary Tree Level Order Traversal II | Tree | Easy |
 | y 104. Maximum Depth of Binary Tree | Tree | Easy |
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| y 226. Invert Binary Tree | Tree | Easy |
+| y 235. Lowest Common Ancestor of a Binary Search Tree | Tree | Easy |
+| y 404. Sum of Left Leaves | Tree | Easy |
 |        |      |      |
 |        |      |      |
 
@@ -28,8 +28,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | ? 110. Balanced Binary Tree | Tree | Easy |
 | ? 111. Minimum Depth of Binary Tree | Tree | Easy |
 | * 112. Path Sum | Tree | Easy |
-|        |      |      |
-|        |      |      |
+| ? 257. Binary Tree Paths | Tree | Easy |
+| - 437. Path Sum III | Tree | Easy |
 |        |      |      |
 |        |      |      |
 |        |      |      |
