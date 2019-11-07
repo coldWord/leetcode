@@ -18,8 +18,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 226. Invert Binary Tree | Tree | Easy |
 | y 235. Lowest Common Ancestor of a Binary Search Tree | Tree | Easy |
 | y 404. Sum of Left Leaves | Tree | Easy |
-|        |      |      |
-|        |      |      |
+| y 144. Binary Tree Preorder Traversal | Tree | medium |
+| y 145. Binary Tree Postorder Traversal | Tree | Hard |
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
@@ -30,8 +30,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | * 112. Path Sum | Tree | Easy |
 | ? 257. Binary Tree Paths | Tree | Easy |
 | - 437. Path Sum III | Tree | Easy |
-|        |      |      |
-|        |      |      |
+| * 94. Binary Tree Inorder Traversal | Tree | medium |
+| - 95. Unique Binary Search Trees II | Tree | medium |
 |        |      |      |
 |        |      |      |
 |        |      |      |

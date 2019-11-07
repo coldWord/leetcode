@@ -16,7 +16,7 @@
 
 ## Idea
 1. 递归
-2. 迭代
+2. 迭代，使用一个额外变量来表示各个节点状态，第二次进stack就表示已访问，然后从栈弹出
 
 ## Solution(recursive)
 ```java
@@ -48,5 +48,42 @@ class Solution {
 
 ## Solution(Iteratively)
 ```java
-
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    class TreeNodeState {
+        public TreeNode node;
+        public boolean isVisited;
+        TreeNodeState (TreeNode node, boolean state) {
+            this.node = node;
+            isVisited = state;
+        }
+    }
+    
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new LinkedList<>();
+        Stack<TreeNodeState> stack = new Stack<>();
+        stack.push(new TreeNodeState(root, false));
+        while (!stack.isEmpty()) {
+            TreeNodeState node = stack.pop();
+            if (node.node != null) {
+                if (!node.isVisited) {
+                    stack.push(new TreeNodeState(node.node.right, false));
+                    stack.push(new TreeNodeState(node.node, true));
+                    stack.push(new TreeNodeState(node.node.left, false));
+                } else {
+                    list.add(node.node.val);
+                }   
+            }
+        }
+        return list;
+    }
+}
 ```
