@@ -20,6 +20,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 404. Sum of Left Leaves | Tree | Easy |
 | y 144. Binary Tree Preorder Traversal | Tree | medium |
 | y 145. Binary Tree Postorder Traversal | Tree | Hard |
+| y 102. Binary Tree Level Order Traversal | Tree | medium |
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
