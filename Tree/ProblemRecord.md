@@ -32,7 +32,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | - 437. Path Sum III | Tree | Easy |
 | * 94. Binary Tree Inorder Traversal | Tree | medium |
 | - 95. Unique Binary Search Trees II | Tree | medium |
-|        |      |      |
+| - 98. Validate Binary Search Tree | Tree | medium |
 |        |      |      |
 |        |      |      |
 |        |      |      |
