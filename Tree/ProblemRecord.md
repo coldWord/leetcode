@@ -22,6 +22,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 145. Binary Tree Postorder Traversal | Tree | Hard |
 | y 102. Binary Tree Level Order Traversal | Tree | medium |
 | y 103. Binary Tree Zigzag Level Order Traversal | Tree | medium |
+| y 106. Construct Binary Tree from Inorder and Postorder Traversal | Tree | medium |
+| y 113. Path Sum II | Tree| medium |
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
@@ -36,7 +38,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | - 95. Unique Binary Search Trees II | Tree | medium |
 | - 98. Validate Binary Search Tree | Tree | medium |
 | * 105. Construct Binary Tree from Preorder and Inorder Traversal | Tree | medium |
-|        |      |      |
+| * 114. Flatten Binary Tree to Linked List | Tree | medium |
 |        |      |      |
 |        |      |      |
 |        |      |      |
