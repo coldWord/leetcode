@@ -4,6 +4,51 @@
   - 迭代指针为空指针时的处理
 - 注意最后一位相加进位时的处理
 
+## Solution(第二次)
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int carry = 0; // 进位
+        ListNode dummy = new ListNode(0);
+        dummy.next = l1;
+        while (l1 != null || l2 != null) {
+            int val1 = (l1 != null) ? l1.val : 0;
+            int val2 = (l2 != null) ? l2.val : 0;
+            int sum = val1 + val2 + carry;
+            
+            carry = sum / 10;
+            sum = sum % 10;
+            
+            // l1长度小于或等于l2长度,把l2剩余部分接到l1后面
+            if (l1.next == null && l2 != null) {
+                l1.next = (l2.next != null) ? l2.next : null;
+                l2.next = null;
+            }
+            
+            l1.val = sum;
+            
+            if (l1.next == null && carry == 1) {
+                l1.next = new ListNode(1);
+                break;
+            }
+            l1 = l1.next;
+            if (l2 != null) {
+                l2 = l2.next;   
+            }
+        }
+        return dummy.next;
+    }
+}
+```
+
 ## Solution
 
 ```C++

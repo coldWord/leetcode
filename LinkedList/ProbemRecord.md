@@ -29,16 +29,16 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 
 | Status                          | Tag        | Note   |
 | ------------------------------- | ---------- | ------ |
-| ？ 83. 删除排序链表中的重复元素 | LinkedList | easy   |
-| *  148.排序链表                 | LinkedList | medium |
-| ?  203.删除链表中给定的元素     | LinkedList | easy   |
-| @ 82.删除排序链表中重复元素II   | LinkedList | medium |
-| @ 138.复制带随机指针的链表      | LinkedList | medium |
-| ？ 143.重排链表                 | LinkedList | medium |
-| @ 147.对链表进行插入排序        | LinkedList | medium |
-| ?  328.奇偶链表                 | LinkedList | medium |
-| - 430.扁平化多级双向链表        | LinkedList | medium |
-| @ 2.两数相加                    | LinkedList | medium |
+| @@ 2.两数相加                    | LinkedList | medium |
+| @y 82.删除排序链表中重复元素II     | LinkedList | medium |
+| ？y 83. 删除排序链表中的重复元素    | LinkedList | easy   |
+| @y 138.复制带随机指针的链表        | LinkedList | medium |
+| ？y 143.重排链表                  | LinkedList | medium |
+| @@ 147.对链表进行插入排序           | LinkedList | medium |
+| *  148.排序链表                  | LinkedList | medium |
+| ?  203.删除链表中给定的元素        | LinkedList | easy   |
+| ?  328.奇偶链表                  | LinkedList | medium |
+| - 430.扁平化多级双向链表           | LinkedList | medium |
 |                                 |            |        |
 |                                 |            |        |
 |                                 |            |        |

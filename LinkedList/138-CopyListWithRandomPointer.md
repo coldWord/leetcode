@@ -4,7 +4,60 @@
 
 要求返回这个链表的**深拷贝**。 
 
+
 ## Idea
+用一个map存储原链表和copy链表节点对应关系
+
+## Solution
+```java
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node next;
+    public Node random;
+
+    public Node() {}
+
+    public Node(int _val,Node _next,Node _random) {
+        val = _val;
+        next = _next;
+        random = _random;
+    }
+};
+*/
+// time complexity:O(2n)
+// space complexity:O(n)
+class Solution {
+    public Node copyRandomList(Node head) {
+        if (head == null) return null;
+        Node copyHead = new Node(head.val, null, null);
+        // 存储原链表节点和copy链表节点对应关系
+        Map<Node, Node> relation = new HashMap<>();
+        relation.put(head, copyHead);
+        Node cur = head.next;
+        Node pre = copyHead;
+        while (cur != null) {
+            Node copy = new Node(cur.val, null, null);
+            pre.next = copy;
+            relation.put(cur, copy);
+            cur = cur.next;
+            pre = pre.next;
+        }
+        // 设置random指针
+        cur = head;
+        Node copyCur = copyHead;
+        while (cur != null) {
+            copyCur.random = relation.get(cur.random);
+            cur = cur.next;
+            copyCur = copyCur.next;
+        }
+        return copyHead;
+    }
+}
+```
+
+## Idea (bad)
 
 1. 用一个map存储原来节点引用与pos的关系(便于复制该节点时能快速确定random指针指向的位置号)
 2. 用一个map存储复拷贝节点引用和pos的关系,这一步拷贝节点的random位置还不能进行指向

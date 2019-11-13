@@ -14,6 +14,45 @@
 因为排序列表，所以没必要用map来做，用一个迭代引用p和一个p.next的引用next，以next为起始开始遍历，如果next.val和p.val相等，删除next，迭代直到next.val与p.next不相等，同时用一个boolean型判断p的值是否出现重复。
 
 ## Solution
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ * time complexity:O(n)
+ * space complexity:O(1)
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        boolean isDuplicated = false;
+        while (head != null) {
+            // 删除重复节点(除了重复节点中最前面的那个节点)
+            while (head.next != null && head.val == head.next.val) {
+                isDuplicated = true;
+                head.next = head.next.next;
+            }
+            // 判断当前节点是否是重复节点
+            if (isDuplicated) {
+                pre.next = head.next;
+                head = head.next;
+                isDuplicated = false;
+            } else {
+                pre = pre.next;
+                head = head.next;   
+            }
+        }
+        return dummy.next;
+    }
+}
+```
+
+## Solution
 
 ```java
 /**

@@ -3,8 +3,43 @@
 对链表进行插入排序。
 
 ## Idea
+已排好序的部分就不动了
 
-要断开当前遍历节点和后续节点
+## Solution
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode insertionSortList(ListNode head) {
+        if (head == null) return null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = head.next, tail = head;
+        while (cur != null) {
+            if (cur.val >= tail.val) {
+                tail = cur;
+                cur = cur.next;
+            } else {
+                tail.next = cur.next;
+                ListNode p = dummy;
+                while (p.next.val < cur.val) {
+                    p = p.next;
+                }
+                cur.next = p.next;
+                p.next = cur;
+                cur = tail.next;
+            }
+        }
+        return dummy.next;
+    }
+}
+```
 
 ## Solution
 
