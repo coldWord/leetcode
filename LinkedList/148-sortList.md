@@ -83,14 +83,15 @@ class Solution {
                 ListNode left = cur;
                 ListNode right = split(left, step);
                 cur = split(right, step);
-                prev = merge(left, right, prev); // prev引用很妙
+                prev = merge(left, right, prev); // prev引用很妙，指向已排序链表的尾部
             }
         }
         return dummy.next;
     }
     
     /*
-     * 根据n的数目，把head链表分成两链表，一个前n个节点，另一个剩余的
+     * 根据n的数目，把head链表分成两链表，一个前n个节点，末尾节点next置为null，另一个是链表的剩余的部分
+     * 返回值是另一部分的头节点
      */
     private ListNode split(ListNode head, int n) {
         if (head == null) return null;
@@ -113,7 +114,7 @@ class Solution {
     }
     
     /*
-     * 返回合并后的末尾引用,引入一个prev引用,自动连接prev和l1、l2
+     * 返回合并后的末尾引用,引入一个prev引用,prev是已排序好的链表末尾，连接prev和l1、l2合并后的链表
      */
     private ListNode merge(ListNode left, ListNode right, ListNode prev) {
         ListNode cur = prev;

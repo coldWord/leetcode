@@ -8,6 +8,42 @@
 
 设置多个指针分别指向奇数链表的尾，偶数链表的头和尾.
 
+## Solution(second)
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null || head.next == null || head.next.next == null) return head;
+        ListNode oddTail = head, evenHead, evenTail;
+        evenHead = evenTail = head.next;
+        ListNode cur = head.next.next;
+        boolean isOdd = true;
+        while (cur != null) {
+            ListNode curNext = cur.next;
+            if (isOdd) {
+                oddTail.next = cur;
+                cur.next = evenHead;
+                evenTail.next = curNext;
+                oddTail = cur;
+                isOdd = false;
+            } else {
+                evenTail = cur;
+                isOdd = true;
+            }
+            cur = curNext;
+        }
+        return head;
+    }
+}
+```
+
 ## Solution
 
 ```java
