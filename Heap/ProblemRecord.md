@@ -23,9 +23,9 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
-| * 703.Kth Largest Element in a Stream | Heap              | Easy  |
-| @ 1046. Last Stone Weight             | Heap / Greedy     | Easy  |
-| @ 239. Sliding Window Maximum         | Heap              | Hard  |
+| *y 703.Kth Largest Element in a Stream | Heap              | Easy  |
+| @y 1046. Last Stone Weight             | Heap / Greedy     | Easy  |
+| @- 239. Sliding Window Maximum         | Heap              | Hard  |
 |        |      |      |
 |        |      |      |
 |        |      |      |

@@ -23,9 +23,11 @@ class Solution {
     public int lastStoneWeight(int[] stones) {
         PriorityQueue<Integer> pq = new PriorityQueue<>((i1, i2) -> i2 - i1);
         // build heap
+        // O(n)
         for (int i : stones)
             pq.offer(i);
         
+        // O(nlogn)
         while (pq.size() > 1) {
             int y = pq.poll();
             int x = pq.poll();

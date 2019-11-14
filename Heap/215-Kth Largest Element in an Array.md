@@ -19,42 +19,44 @@
 
 ## Solution
 ```java
-class Solution {
+class KthLargest {
     class HeapMin {
-        private int size;
-        private int[] heap;
-        private int maxSize;
-        public HeapMin(int k) {
+        int[] heap;
+        int size;
+        int maxSize;
+        
+        HeapMin() {
+            maxSize = 20;
             size = 0;
-            maxSize = k;
             heap = new int[maxSize];
         }
         
-        private int parent(int pos) {
-            return pos == 0 ? 0 : (pos-1)/2;
+        int parent(int pos) { return (pos == 0) ? 0 : (pos-1)/2; }
+        
+        int left(int pos) { return 2*pos+1; }
+        
+        int right(int pos) { return 2*pos+2; }
+        
+        void swap(int x, int y) {
+            int tmp = heap[x];
+            heap[x] = heap[y];
+            heap[y] = tmp;
         }
         
-        private int left(int pos) {
-            return 2*pos + 1;
+        // extend max size
+        void extend() {
+            int[] newHeap = new int[maxSize*2];
+            for (int i = 0; i < maxSize; ++i)
+                newHeap[i] = heap[i];
+            heap = newHeap;
+            maxSize *= 2;
         }
         
-        private int right(int pos) {
-            return 2*pos + 2;
-        }
+        public int size() { return size; }
         
-        public int peek() {
-            return heap[0];
-        }
-        
-        public void swap(int pos1, int pos2) {
-            int tmp = heap[pos1];
-            heap[pos1] = heap[pos2];
-            heap[pos2] = tmp;
-        }
-        
-        public void heapPush(int val) {
-            if (size < maxSize)
-                size++;
+        public void insert(int val) {
+            if (++size > maxSize)
+                extend();
             heap[size-1] = val;
             int cur = size-1;
             while (heap[cur] < heap[parent(cur)]) {
@@ -63,44 +65,53 @@ class Solution {
             }
         }
         
-        public int heapPop() {
-            if (size > 0)
-                size--;
+        public int pop(){
+            if (size <= 0) return 0; 
             int min = heap[0];
-            heap[0] = heap[size];
+            heap[0] = heap[--size];
             int cur = 0;
             while (left(cur) < size) {
                 int smaller = left(cur);
-                if (right(cur) < size)
-                    smaller = heap[right(cur)] < heap[smaller] ? right(cur) : smaller;
-                if (heap[cur] < heap[smaller])
-                    break;
+                if (right(cur) < size && heap[right(cur)] < heap[smaller])
+                    smaller = right(cur);
+                if (heap[cur] < heap[smaller]) break; // smaller than left and right child
                 swap(cur, smaller);
                 cur = smaller;
             }
             return min;
         }
         
-        public int size() {
-            return size;
+        public int peek() { return heap[0]; }
+    }
+    
+    private HeapMin heapMin;
+    private boolean isFull;
+    
+    public KthLargest(int k, int[] nums) {
+        if (k > nums.length) isFull = false;
+        else isFull = true;
+        heapMin = new HeapMin();
+        for (int i = 0; i < nums.length; ++i) {
+            if (heapMin.size() <= k) {
+                heapMin.insert(nums[i]);
+                continue;
+            }
+            if (heapMin.peek() < nums[i]) {
+                heapMin.pop();
+                heapMin.insert(nums[i]);
+            }
         }
     }
     
-    public int findKthLargest(int[] nums, int k) {
-        HeapMin h = new HeapMin(k);
-        // k * logk
-        for (int i = 0; i < k; ++i) {
-            h.heapPush(nums[i]);
+    public int add(int val) {
+        if (!isFull) {
+            heapMin.insert(val);
+            isFull = true;
+        } else if (val > heapMin.peek()) {
+            heapMin.pop();
+            heapMin.insert(val);
         }
-        
-        // 2(n-k) * logk
-        for (int i = k; i < nums.length; ++i) {
-            if (nums[i] > h.peek()) {
-                h.heapPop();
-                h.heapPush(nums[i]);
-            }
-        }
-        return h.peek();
+        return heapMin.peek();
     }
 }
 ```
