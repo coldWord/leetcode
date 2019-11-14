@@ -18,6 +18,10 @@ XOR 满足交换律和结合律
 a XOR b XOR a = (a XOR a) XOR b = 0 XOR b =b
 所以我们只需要将所有的数进行 XOR 操作，得到那个唯一的数字。
 
+>交换律：a ^ b ^ c <=> a ^ c ^ b  
+>任何数于0异或为任何数 0 ^ n => n  
+>相同的数异或为0: n ^ n => 0
+
 ## Solution
 
 ```java
