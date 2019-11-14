@@ -32,6 +32,36 @@
 使用sliding window.
 
 ## Solution
+```java
+// O(2n)
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null) return 0;
+        if (s.length() == 0) return 0;
+        Map<Character, Integer> map = new HashMap<>();
+        int maxLength = 0, length = 0;
+        int left = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            if (!map.containsKey(s.charAt(i))) {
+                map.put(s.charAt(i), i);
+                length++;
+            } else {
+                int dup = map.get(s.charAt(i)); // find the duplicated char
+                for (; left <= dup; ++left) {
+                    map.remove(s.charAt(left));
+                    length--;
+                }
+                length++;
+                map.put(s.charAt(i), i);
+            }
+            if (length > maxLength) maxLength = length;
+        }
+        return maxLength;
+    }
+}
+```
+
+## Solution
 
 ```java
 // time complexity: O(2n)
