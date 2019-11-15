@@ -11,7 +11,7 @@
 ```
 
 ## Idea
-
+厄拉多塞筛法
  https://leetcode-cn.com/problems/count-primes/solution/ru-he-gao-xiao-pan-ding-shai-xuan-su-shu-by-labula/ 
 
 ## Solution

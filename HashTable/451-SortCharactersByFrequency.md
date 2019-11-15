@@ -22,6 +22,43 @@
 
 思路2：先用哈希表存储频率表，然后建立以频率为index，对应的字符组为值的数组，从尾部遍历到0。
 
+## Solution(Second)
+```java
+// time complexity:O(3n)
+class Solution {
+    public String frequencySort(String s) {
+        if (s == null || s.length() < 3) return s;  
+        Map<Character, StringBuilder> map = new HashMap<>();
+        // 构建字符与对应字符出现次数的map
+        for (char c : s.toCharArray()) {
+            if (map.containsKey(c))
+                map.get(c).append(c); 
+            else
+                map.put(c, new StringBuilder(Character.toString(c)));
+        }
+        Map<Integer, StringBuilder> mapRes = new HashMap<>();
+        int max = 0;
+        // 根据字符的出现数构建字符出现次数和字符串的关系
+        for (Character c : map.keySet()) {
+            StringBuilder sb = map.get(c);
+            int key = sb.length();
+            if (key > max) max = key;
+            if (mapRes.containsKey(key))
+                mapRes.get(key).append(sb);
+            else
+                mapRes.put(key, sb);
+        }
+        // 根据最大出现次数构建最终的String
+        StringBuilder res = new StringBuilder();
+        for (int i = max; i > 0; --i) {
+            if (mapRes.containsKey(i))
+                res.append(mapRes.get(i));
+        }
+        return res.toString();
+    }
+}
+```
+
 ## Solution
 
 ```java
