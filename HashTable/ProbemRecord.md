@@ -33,7 +33,7 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | -y 347.前K个高频元素         | Hash                    | medium |
 | @y 451.根据字符出现频率排序  | Hash                    | medium |
 | @@ 30.串联所有单词的子串     | Hash / sliding window  | Hard   |
-| * 76.最小覆盖子串           | Sliding Window/Hash     | Hard   |
+| *y 76.最小覆盖子串           | Sliding Window/Hash     | Hard   |
 |                            |                         |        |
 |                            |                         |        |
 |                            |                         |        |
