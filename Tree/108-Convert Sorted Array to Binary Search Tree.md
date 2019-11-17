@@ -29,15 +29,16 @@
  */
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-        return sorted(nums, 0, nums.length-1);
+        if (nums == null) return null;
+        return doSortedArrayToBST(nums, 0, nums.length-1);
     }
-    
-    private TreeNode sorted(int[] nums, int l, int r) {
-        if (l > r) return null;
-        int mid = l + (r-l)/2; // 避免溢出
+
+    private TreeNode doSortedArrayToBST(int[] nums, int left, int right) {
+        if (left > right) return null;
+        int mid = left + (right-left)/2;
         TreeNode node = new TreeNode(nums[mid]);
-        node.left = sorted(nums, l, mid-1);
-        node.right = sorted(nums, mid+1, r);
+        node.left = doSortedArrayToBST(nums, left, mid-1);
+        node.right = doSortedArrayToBST(nums, mid+1, right);
         return node;
     }
 }
