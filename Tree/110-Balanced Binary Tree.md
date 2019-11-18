@@ -29,6 +29,8 @@
  4   4
 返回 false 。
 ```
+## Idea
+子树不是平衡二叉树，返回-1，子树高度差大于1返回-1
 
 ## Solution
 ```java
@@ -58,6 +60,26 @@ class Solution {
         if (Math.abs(left - right) > 1)
             return -1;
         return Math.max(left, right);
+    }
+}
+```
+```java
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) return true;
+        if (getDepth(root, 1) == -1) return false;
+        return true;
+    }
+
+    // 子树不是平衡二叉树，返回-1，子树高度差大于1返回-1
+    private int getDepth(TreeNode node, int height) {
+        if (node == null) return height;
+        int left = getDepth(node.left, height+1);
+        if (left == -1) return -1;
+        int right = getDepth(node.right, height+1);
+        if (right == -1) return -1;
+        if (Math.abs(left - right) <= 1) return (left > right) ? left : right;
+        return -1;
     }
 }
 ```

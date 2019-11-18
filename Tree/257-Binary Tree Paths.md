@@ -23,6 +23,31 @@
 
 ## Solution
 ```java
+class Solution {
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> paths = new LinkedList<>();
+        doBinaryTreePaths(root, new StringBuilder(), paths);
+        return paths;
+    }
+
+    private void doBinaryTreePaths(TreeNode node, StringBuilder path, List<String> paths) {
+        if (node == null) return;
+        if (node.left == null && node.right == null) {
+            path.append(Integer.toString(node.val));
+            paths.add(path.toString());
+            return;
+        }
+        String str = Integer.toString(node.val) + "->";
+        path.append(str);
+        StringBuilder copyPath = new StringBuilder(path);
+        doBinaryTreePaths(node.left, path, paths);
+        doBinaryTreePaths(node.right, copyPath, paths);
+    }
+}
+```
+
+## Solution
+```java
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

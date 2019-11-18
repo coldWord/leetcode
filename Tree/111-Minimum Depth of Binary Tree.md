@@ -22,6 +22,29 @@
 
 ## Solution
 ```java
+class Solution {
+    public int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        return doMinDepth(root, 1, -1);
+    }
+
+    // 返回最小深度
+    private int doMinDepth(TreeNode node, int depth, int minDepth) {
+        if (node == null) return minDepth;
+        // if node is leaf
+        if (node.left == null && node.right == null) {
+            if (depth < minDepth || minDepth == -1) return depth;
+            return minDepth;
+        }
+        minDepth = doMinDepth(node.left, depth+1, minDepth);
+        minDepth = doMinDepth(node.right, depth+1, minDepth);
+        return minDepth;
+    }
+}
+```
+
+## Solution
+```java
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
