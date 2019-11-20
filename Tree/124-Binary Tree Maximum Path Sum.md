@@ -42,8 +42,8 @@ class Solution {
         if (node == null) return 0;
         int left = Math.max(maxValue(node.left), 0);// 如果子树路径和为负则应当置0表示最大路径不包含子树
         int right = Math.max(maxValue(node.right), 0);
-        max = Math.max(max, node.val + left + right); // 判断在该节点包含左右子树的路径和是否大于当前最大路径和
-        return Math.max(left, right) + node.val;
+        max = Math.max(max, node.val + left + right); // 以该节点为root的路径和,判断在该节点包含左右子树的路径和是否大于当前最大路径和
+        return Math.max(left, right) + node.val;// 回溯时返回该节点的最大的路径和(节点值+该节点一边子树路径和)
     }
 }
 ```

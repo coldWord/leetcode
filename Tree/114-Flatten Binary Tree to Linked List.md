@@ -25,7 +25,7 @@
 ```
 
 ## Idea
-后序遍历，设置前驱节点
+变形的后序遍历，设置前驱节点
 
 ## Solution
 ```java
@@ -52,6 +52,31 @@ class Solution {
         node.left = null;
         prev = node;
         return prev;
+    }
+}
+```
+```java
+class Solution {
+    public void flatten(TreeNode root) {
+        while (root != null) {
+            if (root.left == null) {
+                root = root.right;
+            } else {
+                // 1、找root左子树的最右叶子节点pre
+                TreeNode pre = root.left;
+                while (pre.right != null) {
+                    pre = pre.right;
+                }
+                // 2、将root的右子树接为最右节点pre的右孩子
+                pre.right = root.right;
+                // 3、将root的整个左子树接为root的右子树
+                root.right = root.left;
+                // 4、root的左子树为null
+                root.left = null;
+                // 5、递归root的右节点
+                root = root.right;
+            }
+        }
     }
 }
 ```
