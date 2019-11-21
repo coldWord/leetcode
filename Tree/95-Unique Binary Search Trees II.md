@@ -23,7 +23,8 @@
 ```
 
 ## Idea
-动态规划
+1. 递归
+2. 动态规划
 
 ## Solution
 ```java
@@ -36,6 +37,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+ // 分治，大问题[1...n]的搜索树
 class Solution {
     public List<TreeNode> generateTrees(int n) {
         if (n == 0) return new LinkedList<>();
@@ -48,10 +50,14 @@ class Solution {
             res.add(null);
             return res;
         }
-        
+
+        // pick up a root
         for (int i = start; i <= end; ++i) {
+            // all possible left subtrees if i is choosen to be a root
             List<TreeNode> subLeftTree = doGenerateTrees(start, i-1);
+            // all possible right subtrees if i is choosen to be a root
             List<TreeNode> subRightTree = doGenerateTrees(i+1, end);
+            // connect left and right trees to the root i
             for(TreeNode left : subLeftTree){
                 for(TreeNode right : subRightTree){
                     TreeNode node = new TreeNode(i);

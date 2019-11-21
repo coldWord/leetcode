@@ -48,6 +48,29 @@ class Solution {
 
 ## Solution(Iteratively)
 ```java
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new LinkedList<>();
+        if (root == null) return res;
+        Stack<TreeNode> s = new Stack<>();
+        Set<TreeNode> state = new HashSet<>();
+        s.push(root);
+        while (!s.isEmpty()) {
+            TreeNode node = s.pop();
+            if (state.contains(node)) { // has been visited
+                res.add(node.val);
+            } else { // not visited
+                if (node.right != null) s.push(node.right);
+                s.push(node);
+                if (node.left != null) s.push(node.left);
+                state.add(node);
+            }
+        }
+        return res;
+    }
+}
+```
+```java
 /**
  * Definition for a binary tree node.
  * public class TreeNode {

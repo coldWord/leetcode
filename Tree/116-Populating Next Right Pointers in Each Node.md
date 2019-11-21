@@ -60,3 +60,29 @@ class Solution {
     }
 }
 ```
+```java
+class Solution {
+    public Node connect(Node root) {
+        Node dummy = new Node(0, null, null, null);
+        Node cur = root;
+        Node preChildLevel = dummy;
+        while (cur != null) {
+            if (cur.left != null) {
+                preChildLevel.next = cur.left;
+                preChildLevel = preChildLevel.next;
+            }
+            if (cur.right != null) {
+                preChildLevel.next = cur.right;
+                preChildLevel = preChildLevel.next;
+            }
+            cur = cur.next;
+            if (cur == null) {
+                cur = dummy.next;
+                dummy.next = null; // 必须设置为null，不然最后一层时会出现无线循环
+                preChildLevel = dummy;
+            }
+        }
+        return root;
+    }
+}
+```
