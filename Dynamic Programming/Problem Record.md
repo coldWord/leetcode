@@ -24,11 +24,11 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
 | * 53. Maximum Subarray | dp | easy |
+| ? 70. Climbing Stairs | dp | easy |
+| * 121. Best Time to Buy and Sell Stock | dp | easy |
 | * 303. Range Sum Query - Immutable | dp | easy |
-| * 392. Is Subsequence |dp|easy|
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| * 5. Longest Palindromic Substring | dp | medium |
+| @ 62. Unique Paths | dp | medium |
 |        |      |      |
 |        |      |      |
 |        |      |      |
