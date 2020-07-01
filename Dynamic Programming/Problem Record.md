@@ -12,9 +12,9 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| y 70.Climbing stairs | dp | easy |
+| y 121. Best Time to Buy and Sell Stock | dp | easy |
+| y 198. House Robber | dp | easy |
 |        |      |      |
 |        |      |      |
 |        |      |      |
@@ -24,8 +24,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | Status | Tag  | Note |
 | ------ | ---- | ---- |
 | * 53. Maximum Subarray | dp | easy |
-|        |      |      |
-|        |      |      |
+| * 303. Range Sum Query - Immutable | dp | easy |
+| * 392. Is Subsequence |dp|easy|
 |        |      |      |
 |        |      |      |
 |        |      |      |
