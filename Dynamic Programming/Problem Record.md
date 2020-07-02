@@ -15,8 +15,9 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | y 70.Climbing stairs | dp | easy |
 | y 121. Best Time to Buy and Sell Stock | dp | easy |
 | y 198. House Robber | dp | easy |
-|        |      |      |
-|        |      |      |
+| y 16.17. Contiguous Sequence LCCI |dp|easy|
+| y 17.16. The Masseuse LCCI       | dp | easy     |
+| y 64. Minimum Path Sum       |   dp   | easy     |
 |        |      |      |
 |        |      |      |
 |        |      |      |
@@ -29,10 +30,9 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | * 303. Range Sum Query - Immutable | dp | easy |
 | * 5. Longest Palindromic Substring | dp | medium |
 | @ 62. Unique Paths | dp | medium |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| * 08.01. Three Steps Problem LCCI | dp |easy|
+| ? 63. Unique Paths II       | dp     | medium      |
+| * 91. Decode Ways       | dp     | medium     |
 |        |      |      |
 |        |      |      |
 |        |      |      |
