@@ -33,11 +33,11 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | * 08.01. Three Steps Problem LCCI | dp |easy|
 | ? 63. Unique Paths II       | dp     | medium      |
 | * 91. Decode Ways       | dp     | medium     |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| * 96. Unique Binary Search Trees       |  dp    | medium     |
+| * 120. Triangle       | dp     | medium     |
+| * 139. Word Break       |  dp    | medium     |
+| * 152. Maximum Product Subarray | dp     | medium     |
+| * 213. House Robber II       |  dp   |  medium    |
 |        |      |      |
 |        |      |      |
 |        |      |      |
