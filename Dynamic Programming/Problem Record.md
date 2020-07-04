@@ -38,7 +38,8 @@ y : 不看答案的情况下一遍就有accept，且复杂度够低
 | * 139. Word Break       |  dp    | medium     |
 | * 152. Maximum Product Subarray | dp     | medium     |
 | * 213. House Robber II       |  dp   |  medium    |
-|        |      |      |
-|        |      |      |
-|        |      |      |
-|        |      |      |
+| * 221. Maximal Square       |  dp    |  medium    |
+| * 264. Ugly Number II       |  dp    |  medium    |
+| * 279. Perfect Squares       |  dp   |  medium    |
+| * 322. Coin Change       |  dp    |  medium    |
+| * 300. Longest Increasing Subsequence       |  dp    |  medium    |
